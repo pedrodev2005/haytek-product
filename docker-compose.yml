@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 3394
+      POSTGRES_DB: haytekdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+  backend:
+    build: ./backend
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://postgres:3394@postgres:5432/haytekdb
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend/.env:/app/.env # monta o .env no container (se necessário)
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  pgdata:
+  pgadmin_data:
