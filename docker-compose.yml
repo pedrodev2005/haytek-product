@@ -33,7 +33,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./backend/.env:/app/.env # monta o .env no container (se necessário)
+      - ./backend/.env:/app/.env
 
   frontend:
     build:
