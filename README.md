@@ -250,39 +250,6 @@ Coverage:    78.45%
 
 ---
 
-## 🐳 Comandos Docker Úteis
-
-```bash
-# Subir todos os serviços
-docker-compose up -d
-
-# Ver logs em tempo real
-docker-compose logs -f
-
-# Ver logs de um serviço específico
-docker-compose logs -f backend
-
-# Parar todos os serviços
-docker-compose down
-
-# Rebuild completo
-docker-compose up --build -d
-
-# Acessar terminal do backend
-docker-compose exec backend bash
-
-# Acessar PostgreSQL via CLI
-docker-compose exec postgres psql -U postgres -d haytekdb
-
-# Ver status dos containers
-docker-compose ps
-
-# Remover volumes (cuidado: apaga dados!)
-docker-compose down -v
-```
-
----
-
 ## 🔧 Configuração do Ambiente
 
 ### 🚪 Portas utilizadas
@@ -321,21 +288,6 @@ docker-compose down -v
 
 ---
 
-## 🔍 Monitoramento e Debug
-
-### Verificar saúde dos serviços
-
-```bash
-# Status dos containers
-docker-compose ps
-
-# Consumo de recursos
-docker stats
-
-# Logs detalhados
-docker-compose logs --tail=100 -f
-```
-
 ### Endpoints de saúde
 
 - **Backend**: `GET /products` (retorna lista)
@@ -344,57 +296,11 @@ docker-compose logs --tail=100 -f
 
 ---
 
-## 🚨 Solução de Problemas
-
-### Porta já está em uso
-
-```bash
-# Verificar processos usando as portas
-lsof -i :3000
-lsof -i :5173
-lsof -i :5432
-
-# Parar containers e tentar novamente
-docker-compose down
-docker-compose up -d
-```
-
-### Banco de dados não conecta
-
-```bash
-# Verificar logs do PostgreSQL
-docker-compose logs postgres
-
-# Reiniciar apenas o banco
-docker-compose restart postgres
-```
-
-### Frontend não carrega
-
-```bash
-# Rebuild do frontend
-docker-compose up --build frontend
-
-# Verificar logs
-docker-compose logs frontend
-```
-
----
-
 ## 📞 Contato
 
 **Pedro Moraes**  
 🎓 Estudante de Análise e Desenvolvimento de Sistemas  
 📧 **Email**: pedro.dev2005@gmail.com  
-🔗 **GitHub**: [pedrodev2005](https://github.com/pedrodev2005)  
-💼 **LinkedIn**: [Seu LinkedIn]
+🔗 **GitHub**: [pedrodev2005](https://github.com/pedrodev2005)
 
 ---
-
-## 📄 Licença
-
-Este projeto foi desenvolvido como parte do processo seletivo da **Haytek** e está disponível para fins educacionais e de avaliação técnica.
-
----
-
-_Desenvolvido com ❤️ e muita dedicação para a **Haytek** 🚀_
