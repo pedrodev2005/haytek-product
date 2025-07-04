@@ -195,37 +195,13 @@ O sistema utiliza **soft delete**, marcando o campo `active` como `false`.
 
 ## 🧪 Testes
 
-### Executar testes unitários
+### Executar testes unitários (local)
 
 ```bash
-# Com Docker (recomendado)
-docker-compose exec backend npm run test
-
-# Cobertura de testes
-docker-compose exec backend npm run test:cov
-
-# Modo watch para desenvolvimento
-docker-compose exec backend npm run test:watch
-
 # Localmente
 cd backend
 npm run test
 ```
-
-### Exemplo de resultado
-
-```text
-PASS  src/products/products.service.spec.ts
-PASS  src/products/products.controller.spec.ts
-PASS  src/app.controller.spec.ts
-
-Test Suites: 3 passed, 3 total
-Tests:       14 passed, 14 total
-Snapshots:   0 total
-Time:        2.156 s
-Coverage:    78.45%
-```
-
 ---
 
 ## 🔧 Configuração do Ambiente
