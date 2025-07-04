@@ -173,7 +173,6 @@ O sistema utiliza **soft delete**, marcando o campo `active` como `false`.
 
 | Requisito                   | Status | Detalhes                            |
 | --------------------------- | ------ | ----------------------------------- |
-| **Testes unitários**        | ✅     | Jest com cobertura 75%+             |
 | **Documentação OpenAPI**    | ✅     | Swagger interativo                  |
 | **Dockerização completa**   | ✅     | Multi-container com orquestração    |
 | **UI/UX profissional**      | ✅     | Material UI + responsividade        |
