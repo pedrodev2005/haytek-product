@@ -1,6 +1,5 @@
-# 💼 Desafio Técnico - Estagiário(a) de Desenvolvimento | Haytek
+# 💼 Desafio Técnico - Estagiário de Desenvolvimento | Haytek
 
-Bem-vindo ao meu desafio técnico para a vaga de Estágio em Desenvolvimento na **Haytek**!  
 Este projeto é um sistema completo de **gestão de produtos** (e-commerce de lentes fotográficas), com operações CRUD, filtros, interface responsiva e API documentada.
 
 ---
@@ -132,24 +131,6 @@ Content-Type: application/json
 }
 ```
 
-### Buscar produtos com filtros
-
-```http
-GET /products?page=1&limit=5&search=Canon&type=Prime
-```
-
-### Atualizar produto
-
-```http
-PUT /products/:id
-Content-Type: application/json
-
-{
-  "model": "Canon EF 85mm f/1.4L IS USM",
-  "weight": 950
-}
-```
-
 ### Deletar produto (soft delete)
 
 ```http
@@ -198,8 +179,6 @@ O sistema utiliza **soft delete**, marcando o campo `active` como `false`.
 | **UI/UX profissional**      | ✅     | Material UI + responsividade        |
 | **Código limpo e tipado**   | ✅     | TypeScript em frontend e backend    |
 | **Banco de dados robusto**  | ✅     | PostgreSQL + pgAdmin                |
-| **Validações consistentes** | ✅     | DTOs no backend + Yup no frontend   |
-| **Tratamento de erros**     | ✅     | Feedback visual e logs estruturados |
 
 ---
 
@@ -285,14 +264,6 @@ Coverage:    78.45%
 - **Node.js** 18+
 - **npm** ou **yarn**
 - **PostgreSQL** 13+
-
----
-
-### Endpoints de saúde
-
-- **Backend**: `GET /products` (retorna lista)
-- **Frontend**: Carregamento da interface
-- **Database**: Conexão via pgAdmin
 
 ---
 
